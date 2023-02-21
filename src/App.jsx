@@ -3,9 +3,12 @@ import Header from './components/header/header'
 import Avatar from './assets/Avatar.jpg'
 
 function App() {
-    return(
+    return (
         <div className='app'>
-           <Header foto={Avatar}/>
+            <Header foto={Avatar}
+                    nome={'Shrek da Silva'}
+            />
         </div>
-)}
+    )
+}
 export default App

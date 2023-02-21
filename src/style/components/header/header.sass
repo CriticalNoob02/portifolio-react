@@ -1,13 +1,6 @@
 @import '../../variables/colors'
 @import '../../variables/fonts'
-
-$hover:40%
-
-@keyframes rotation
-    0%
-        transform: rotate(0deg)
-    100%
-        transform: rotate(360deg) 
+@import '../../variables/keyframes'
 
 .headerBox
     width: 100%
@@ -37,7 +30,7 @@ $hover:40%
     height: 100%
     width: 40%
     background: linear-gradient(315deg, #00ccFF, #d400d4)
-    animation: rotation 4s linear infinite
+    animation: $Rotation 4s linear infinite
     transition: 0.3s
 
 .img
@@ -53,3 +46,50 @@ $hover:40%
     justify-content: center
     align-items: center
     flex-direction: column
+
+.title
+    font-family: $Meme-Font
+    font-size: 1.4rem
+    background-color: $Background_dark
+    padding: 20px
+    border-radius: 10px
+    &:hover
+        animation: $Shake 0.5s infinite
+
+.icons
+    font-size: 2.8rem
+
+    
+
+.icon1
+    padding: 0 5px
+    &:hover
+        color: #FED73C
+        transform: scale(1.3)
+        filter: drop-shadow(0 0 0.75rem #1c26ed69)
+.icon2
+    padding: 0 5px
+    &:hover
+        color: #00D8FF
+        transform: scale(1.3)
+        filter: drop-shadow(0 0 0.30rem #ED3487)
+.icon3
+    padding: 0 5px
+    &:hover
+        color: #3774A7
+        transform: scale(1.3)
+        filter: drop-shadow(0 0 0.75rem #ed3a34)
+.icon4
+    padding: 0 5px
+    &:hover
+        color: #CE679A
+        transform: scale(1.3)
+        filter: drop-shadow(0 0 0.75rem #05D1ED)
+    
+
+
+        
+
+
+
+        
