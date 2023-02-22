@@ -31,3 +31,23 @@ $Rotation: rotation
         transform: translate(2px,-3px) rotate(-2deg)
 
 $Shake: shake
+
+@keyframes floating
+    0%
+       transform: translateY(5px) 
+    50%
+        transform: translateY(-5px)
+    100%
+        transform: translateY(5px)
+    
+$Floating: floating
+
+@keyframes floating_reverse
+    0%
+       transform: translateY(-5px) 
+    50%
+        transform: translateY(5px)
+    100%
+        transform: translateY(-5px)
+    
+$Floating_Reverse: floating_reverse
