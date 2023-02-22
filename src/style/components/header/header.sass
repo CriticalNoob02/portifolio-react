@@ -3,7 +3,7 @@
 @import '../../variables/keyframes'
 
 .headerBox
-    width: 100%
+    max-width: 100%
     height: 20%
     margin: 20px
     border-radius: 20px
@@ -29,7 +29,7 @@
 .color
     height: 100%
     width: 40%
-    background: linear-gradient(315deg, #00ccFF, #d400d4)
+    background: linear-gradient(315deg, $Erro, $Secundary)
     animation: $Rotation 4s linear infinite
     transition: 0.3s
 
@@ -53,6 +53,8 @@
     background-color: $Background_dark
     padding: 20px
     border-radius: 10px
+    cursor: none
+    user-select: none
     &:hover
         animation: $Shake 0.5s infinite
 
@@ -87,11 +89,3 @@
         color: #CE679A
         transform: scale(1.3)
         filter: drop-shadow(0 0 0.75rem #05D1ED)
-    
-
-
-        
-
-
-
-        
