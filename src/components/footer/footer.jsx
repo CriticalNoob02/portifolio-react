@@ -1,13 +1,12 @@
 import '../../style/components/footer/footer.sass'
-import Selo from '../../assets/Selo.png'
 
-function Footer(){
+function Footer(props){
     return(
         <div className="footerBox">
             <p className='signature'>
-                Criado por <a href="https://github.com/CriticalNoob02" target="_blank">CriticalNoob02</a>
+                Criado por <a href={props.link} target="_blank">{props.nome}</a>
             </p>
-            <img src={Selo} alt="Selo" className='stamp' />
+            <img src={props.selo} alt="Selo" className='stamp'/>
         </div>
     )
 }
