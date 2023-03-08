@@ -1,9 +1,9 @@
 import './style/main.sass'
 import Header from './components/header/header'
-import Main from './components/main/main'
 import Footer from './components/footer/footer'
 import Avatar from './assets/Avatar.jpg'
 import Selo from './assets/Selo.png'
+import Body from './components/body/Body'
 
 
 function App() {
@@ -12,6 +12,7 @@ function App() {
             <Header foto={Avatar}
                     nome={'Shrekão da Silva'}
             />
+            <Body/>
             <Footer selo={Selo}
                     link={'https://github.com/CriticalNoob02'}
                     nome={"CriticalNoob02"}/>
