@@ -8,17 +8,21 @@ import Img4 from '../../assets/img4.png'
 import Img5 from '../../assets/img5.png'
 
 function Body(){
-    const titles = ['Algo55','Algo','Algo','Algo2','Algo2']
-    const texts = ['Algo2','Algo2','Algo2','Algo2','Algo2']
-    const imgs = [Img1,Img2,Img3,Img4,Img5]
+    const titlesCards = ['Algo55','Algo','Algo','Algo2','Algo2']
+    const textsCards = ['Algo2','Algo2','Algo2','Algo2','Algo2']
+    const imgsCards = [Img1,Img2,Img3,Img4,Img5]
+    const titleSummary = 'Titulo da porra do summary'
+    const textSummary = 'Texto base do summary dsfnoldnffodnfodsnf jdfnondofnojdksnfdsofnokldjsn dfdsifodifndsof fdseiofosdif nsdofndiosf    fnofndsofnf'
 
     return(
         <div className="body">
-            <Cards title={titles}
-                    text={texts}
-                    img={imgs}
-                    />
-            <Summary/>
+            <Summary title={titleSummary}
+                     text={textSummary}
+            />
+            <Cards title={titlesCards}
+                   text={textsCards}
+                   img={imgsCards}
+            />
         </div>
     )
 }
