@@ -12,10 +12,11 @@ function App() {
             <Header foto={Avatar}
                     nome={'Shrekão da Silva'}
             />
-            <Body/>
+            <Body/>           
             <Footer selo={Selo}
                     link={'https://github.com/CriticalNoob02'}
-                    nome={"CriticalNoob02"}/>
+                    nome={"CriticalNoob02"}
+            />
         </div>
     )
 }
