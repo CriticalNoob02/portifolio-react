@@ -1,4 +1,6 @@
 import './components/style/main.sass'
+import React, { useEffect } from 'react'
+import GithubEndpoint from './service/client'
 import Header from './components/header/header'
 import Footer from './components/footer/footer'
 import Avatar from './assets/Avatar.jpg'
@@ -7,6 +9,19 @@ import Body from './components/body/Body'
 
 
 function App() {
+    async function getDataGithub(){
+        try {
+            const response = await GithubEndpoint.get(`/CriticalNoob02`)
+            console.log(response.data) 
+        } catch (error) {
+            console.log("Erro ao recuperar informações da API \n" + error)
+        }
+    }
+    useEffect(() => {
+        getDataGithub()
+    })
+
+
     return (
         <div className='app'>
             <Header foto={Avatar}
