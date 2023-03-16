@@ -1,4 +1,4 @@
-import "../../../style/components/body/cards/cards.sass"
+import "./cards.sass"
 
 function Card(props) {
     return Array.from({length: 5}, (v, k) => k)

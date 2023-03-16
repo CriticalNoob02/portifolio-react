@@ -1,4 +1,5 @@
-import "../../../style/components/body/summary/summary.sass"
+import "./summary.sass"
+
 
 
 function Summary(props){

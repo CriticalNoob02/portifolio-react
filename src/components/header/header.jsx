@@ -1,4 +1,4 @@
-import '../../style/components/header/header.sass'
+import './header.sass'
 import { DiJsBadge,DiReact,DiPython,DiSass } from "react-icons/di"
 
 

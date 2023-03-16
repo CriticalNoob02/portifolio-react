@@ -1,4 +1,4 @@
-import './style/main.sass'
+import './components/style/main.sass'
 import Header from './components/header/header'
 import Footer from './components/footer/footer'
 import Avatar from './assets/Avatar.jpg'

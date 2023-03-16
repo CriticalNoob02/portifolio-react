@@ -1,6 +1,8 @@
-import '../../style/components/body/body.sass'
+import './body.sass'
 import Summary from './summary/Summary'
 import Cards from './cards/cards'
+import Graphics from './graphics/Graphics'
+
 import Img1 from '../../assets/img1.png'
 import Img2 from '../../assets/img2.png'
 import Img3 from '../../assets/img3.png'
@@ -22,6 +24,8 @@ function Body(){
             <Cards title={titlesCards}
                    text={textsCards}
                    img={imgsCards}
+            />
+            <Graphics user={'CriticalNoob02'}
             />
         </div>
     )
