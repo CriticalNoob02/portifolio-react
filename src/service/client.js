@@ -2,7 +2,7 @@ import axios from 'axios'
 
 
 const GithubEndpoint = axios.create({
-    baseURL: 'http://api.github/users'
+    baseURL: 'https://api.github.com/users'
 })
 
 export default GithubEndpoint

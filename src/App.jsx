@@ -1,5 +1,5 @@
 import './components/style/main.sass'
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import GithubEndpoint from './service/client'
 import Header from './components/header/header'
 import Footer from './components/footer/footer'
@@ -9,28 +9,34 @@ import Body from './components/body/Body'
 
 
 function App() {
-    async function getDataGithub(){
+    //Função que ira guardar os dados da requisição
+    const [data, setData] = useState([])
+
+    //Função para recuperar as informações da API
+    async function getBaseGithub(){
         try {
             const response = await GithubEndpoint.get(`/CriticalNoob02`)
-            console.log(response.data) 
+            const data = response.data
+            setData(data)
         } catch (error) {
             console.log("Erro ao recuperar informações da API \n" + error)
         }
     }
-    useEffect(() => {
-        getDataGithub()
-    })
 
+    //Função para gerar um estado logo quando é carregado o app
+    useEffect(() => {
+        getBaseGithub()
+    }, [])
 
     return (
         <div className='app'>
-            <Header foto={Avatar}
-                    nome={'Shrekão da Silva'}
+            <Header foto={data.avatar_url ?? Avatar}
+                    nome={data.name ?? 'Shrekão da Silva'}
             />
             <Body/>           
-            <Footer selo={Selo}
-                    link={'https://github.com/CriticalNoob02'}
-                    nome={"CriticalNoob02"}
+            <Footer selo={data.avatar_url ?? Selo}
+                    link={data.html_url ?? 'https://github.com/CriticalNoob02'}
+                    nome={data.login ?? "CriticalNoob02"}
             />
         </div>
     )
