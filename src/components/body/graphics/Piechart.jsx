@@ -55,10 +55,13 @@ function PieChart(props) {
             
           },
         },
-      }
+    }
     return (
       <div>
-        <Pie data={data} options={options} />
+        <Pie
+          data={data} 
+          options={options}  
+        />
       </div>
     )
   }

@@ -9,7 +9,6 @@ function Graphics(props){
 
  const [lang, setLang] = useState()
 
-
  async function getLangGithub(){
      try {
          let response = await GithubEndpoint.get(`/CriticalNoob02/repos`)
@@ -78,8 +77,7 @@ function Graphics(props){
 
     return(
         <div className="graphicsBox">
-            {console.log(lang)}
-            <PieChart 
+            <PieChart
               labelData={labelApi ?? label}
               descriptionData={labelToolip}
               valueData={dataApi ?? data}
