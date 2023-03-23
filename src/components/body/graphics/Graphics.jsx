@@ -6,11 +6,10 @@ import axios from 'axios'
 import colors from "../../style/variables/colors"
 
 function Graphics(props){ 
- //Função que ira guardar os dados da requisição
+
  const [lang, setLang] = useState()
 
 
- //Função para recuperar as informações da API
  async function getLangGithub(){
      try {
          let response = await GithubEndpoint.get(`/CriticalNoob02/repos`)
@@ -22,7 +21,6 @@ function Graphics(props){
      }
  }
 
- //Função para extrair as linguagens dentro da api
  async function extractLang(langs){
   try {
     var lang = []
@@ -56,27 +54,36 @@ function Graphics(props){
     setLang(result)
  }
 
- //Função para gerar um estado logo quando é carregado o app
  useEffect(() => {
      getLangGithub()
  }, [])
 
-
   // Dados mockados
   const label = ["verde", "Blue", "Yellow"]
-  const labelToolip = 'Algo aqui'
-  const dados = [12,19,3]
-  const cores = [colors.primary_dark,colors.secundary_dark,colors.tertiary_dark]
-  const title = 'Algooooooo'
+  const labelToolip = 'Linhas de Código'
+  const data = [12,19,3]
+  const title = 'Linguagens mais utilizadas nos projetos'
+  // Dados da Api
+  const color = []
+  const labelApi = []
+  const dataApi = []
+  for(let key in lang){
+    labelApi.push(key)
+    dataApi.push(lang[key])
+    console.log(labelApi)
+  }
+  for(let key in colors.colorDefault){
+    color.push(colors.colorDefault[key])
+  }
 
     return(
         <div className="graphicsBox">
             {console.log(lang)}
             <PieChart 
-              labelData={label}
+              labelData={labelApi ?? label}
               descriptionData={labelToolip}
-              valueData={dados}
-              color={cores}
+              valueData={dataApi ?? data}
+              color={color}
               titleText={title}
             />
         </div>
