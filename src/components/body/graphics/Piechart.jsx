@@ -9,6 +9,7 @@ function PieChart(props) {
           label: props.descriptionData,
           data: props.valueData,
           backgroundColor: props.color,
+          hoverOffset: 4
         },
       ],
     }
