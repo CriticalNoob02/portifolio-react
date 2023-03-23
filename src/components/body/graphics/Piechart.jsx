@@ -20,7 +20,9 @@ function PieChart(props) {
             position: 'bottom',
             labels: {
                 color: '#ece0e0',
+                padding: 20,
                 font:{
+                    size: 15,
                     family: "'Poppins', sans-serif"
                 }
             }
@@ -29,8 +31,11 @@ function PieChart(props) {
             display: true,
             text: props.titleText,
             color: '#ece0e0',
+            padding: {
+              bottom: 35
+            },
             font:{
-                size: 15,
+                size: 25,
                 family: "'Poppins', sans-serif"
             },
           },
@@ -56,6 +61,7 @@ function PieChart(props) {
           },
         },
     }
+
     return (
       <div>
         <Pie
