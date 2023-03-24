@@ -1,60 +1,17 @@
 import "./graphics.sass"
+import langData from "../../../service/setGithubDataRepos"
 import PieChart from "./Piechart"
 import React, { useEffect, useState } from 'react'
-import GithubEndpoint from '../../../service/client'
-import axios from 'axios'
 import colors from "../../style/variables/colors"
 
-function Graphics(props){ 
+function Graphics(){ 
 
  const [lang, setLang] = useState()
 
- async function getLangGithub(){
-     try {
-         let response = await GithubEndpoint.get(`/CriticalNoob02/repos`)
-         let data = response.data
-         const langs = data.map((line) =>{ return line.languages_url })
-         extractLang(langs)
-     } catch (error) {
-         console.log("Erro ao recuperar informações da API \n" + error)
-     }
- }
-
- async function extractLang(langs){
-  try {
-    var lang = []
-    for(let i = 0; i < langs.length; i++){
-      var apiRequest = await axios.get(langs[i])
-      lang.push(apiRequest.data)
-    }
-    formattingData(lang)
-  } catch (error) {
-      console.log("Erro ao recuperar informações da API \n" + error)
-  }
- }
-
- function formattingData(dados){
-    const result = dados.reduce((total, obj) => {
-        const keys = Object.keys(obj)
-        if(keys.length === 1){
-            const key = keys[0]
-            if(!total[key]){ total[key] = obj[key]}
-            else{total[key] += obj[key]}
-        }
-        else{
-            keys.forEach(key => {
-              if (!total[key]) { total[key] = obj[key] } 
-              else { total[key] += obj[key] }
-            })     
-        }
-        return total
-    },{})
-    console.log(result)
-    setLang(result)
- }
-
  useEffect(() => {
-     getLangGithub()
+      Promise.resolve(langData)
+      .then( res => setLang(res))
+      .catch(erro => console.log(erro))
  }, [])
 
   // Dados mockados
