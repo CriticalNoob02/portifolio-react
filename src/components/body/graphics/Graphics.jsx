@@ -49,7 +49,6 @@ function Graphics(props){
         }
         return total
     },{})
-    console.log(result)
     setLang(result)
  }
 
