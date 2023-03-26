@@ -1,10 +1,10 @@
 const URLgit = 'https://api.github.com/users'
+const lang = []
 
 const requestLang = fetch(`${URLgit}/CriticalNoob02/repos`)
 .then( res => res.json())
 .then( resData => {
     const langs = resData.map((line) =>{ return line.languages_url })
-    const lang = []
     for(const element of langs){
         fetch(element)
         .then( res => res.json())
@@ -12,11 +12,8 @@ const requestLang = fetch(`${URLgit}/CriticalNoob02/repos`)
             lang.push(dataLangs)
         })
     }
-    return lang
-})
-.then( resLang => {
-    const result = resLang.reduce((total, obj) => {
-        console.log('aaaaa')
+    console.log(lang)
+    const result = lang.reduce((total, obj) => {
         const keys = Object.keys(obj)
         if(keys.length === 1){
             const key = keys[0]
@@ -32,9 +29,9 @@ const requestLang = fetch(`${URLgit}/CriticalNoob02/repos`)
         console.log(total)
         return total
     },{})
-    console.log(result)
-    return result 
+    return result
 })
+
 
 
 

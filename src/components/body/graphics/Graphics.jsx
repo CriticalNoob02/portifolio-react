@@ -1,5 +1,5 @@
 import "./graphics.sass"
-import langData from "../../../service/setGithubDataRepos"
+import requestLang from "../../../service/setGithubDataRepos"
 import PieChart from "./Piechart"
 import React, { useEffect, useState } from 'react'
 import colors from "../../style/variables/colors"
@@ -9,7 +9,7 @@ function Graphics(){
  const [lang, setLang] = useState()
 
  useEffect(() => {
-      Promise.resolve(langData)
+      Promise.resolve(requestLang)
       .then( res => setLang(res))
       .catch(erro => console.log(erro))
  }, [])
