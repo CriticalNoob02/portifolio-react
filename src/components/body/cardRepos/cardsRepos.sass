@@ -1,0 +1,70 @@
+@import "../../style/variables/colors"
+@import '../../style/variables/fonts'
+
+.cardDarkBorder
+    width: 20%
+    height: 300px
+    background-image: linear-gradient(163deg, $Primary_dark 0%, $Secundary_dark 100%)
+    border-radius: 20px
+    transition: all .3s
+
+.cardDarkBody
+    width: 100%
+    height: 100%
+    background-color: #1a1a1a
+    border-radius: 19px
+    transition: all .2s
+    display: flex
+    align-items: center
+    justify-content: space-evenly
+    text-align: center
+    flex-direction: column
+
+.cardDarkBody:hover 
+    transform: scale(0.98)
+    border-radius: 20px
+
+.cardDarkBorder:hover 
+    box-shadow: 0px 0px 30px 1px #d0ff004d
+
+.cardDarkTitle
+    font-family: $Primary-Font
+    font-size: 2.2rem
+    color: $Primary_Detail
+
+.cardDarkParagraph
+    font-family: $Terth-Font
+    font-size: 1.2rem
+    color: $Primary_Detail
+
+.buttonRepos 
+  font-size: 15px
+  padding: 0.7em 2.7em
+  letter-spacing: 0.06em
+  position: relative
+  font-family: inherit
+  border-radius: 0.6em
+  overflow: hidden
+  transition: all 0.3s
+  line-height: 1.4em
+  border: 2px solid $Primary_dark
+  background: linear-gradient(to right, rgba(27, 253, 156, 0.1) 1%, transparent 40%,transparent 60% , rgba(27, 253, 156, 0.1) 100%)
+  color: $Primary_dark
+  box-shadow: inset 0 0 10px rgba(27, 253, 156, 0.4), 0 0 9px 3px rgba(27, 253, 156, 0.1)
+
+.buttonRepos:hover 
+  color: $Primary_dark
+  box-shadow: inset 0 0 10px rgba(27, 253, 156, 0.6), 0 0 9px 3px rgba(27, 253, 156, 0.2)
+
+.buttonRepos:before 
+  content: ""
+  position: absolute
+  left: -4em
+  width: 4em
+  height: 100%
+  top: 0
+  transition: transform .4s ease-in-out
+  background: linear-gradient(to right, transparent 1%, rgba(27, 253, 156, 0.1) 40%,rgba(27, 253, 156, 0.1) 60% , transparent 100%)
+
+.buttonRepos:hover:before 
+  transform: translateX(15em)
