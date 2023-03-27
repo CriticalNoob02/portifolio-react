@@ -2,6 +2,7 @@ import './body.sass'
 import Summary from './summary/Summary'
 import Cards from './cards/cards'
 import Graphics from './graphics/Graphics'
+import CardsDark from './cardRepos/CardsRepos'
 
 import Img1 from '../../assets/img1.png'
 import Img2 from '../../assets/img2.png'
@@ -18,15 +19,19 @@ function Body(){
 
     return(
         <div className="body">
-            <Summary title={titleSummary}
-                     text={textSummary}
+            <Summary 
+                title={titleSummary}
+                text={textSummary}
             />
-            <Cards title={titlesCards}
-                   text={textsCards}
-                   img={imgsCards}
+            <Cards 
+                title={titlesCards}
+                text={textsCards}
+                img={imgsCards}
             />
-            <Graphics user={'CriticalNoob02'}
+            <Graphics 
+                user={'CriticalNoob02'}
             />
+            <CardsDark/>
         </div>
     )
 }
