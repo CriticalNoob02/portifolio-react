@@ -5,34 +5,21 @@ const requestLang = fetch(`${URLgit}/CriticalNoob02/repos`)
 .then( res => res.json())
 .then( resData => {
     const langs = resData.map((line) =>{ return line.languages_url })
-    for(const element of langs){
-        fetch(element)
-        .then( res => res.json())
-        .then( dataLangs => {
-            lang.push(dataLangs)
-        })
-    }
-    console.log(lang)
-    const result = lang.reduce((total, obj) => {
-        const keys = Object.keys(obj)
-        if(keys.length === 1){
-            const key = keys[0]
-            if(!total[key]){ total[key] = obj[key]}
-            else{total[key] += obj[key]}
-        }
-        else{
-            keys.forEach(key => {
-            if (!total[key]) { total[key] = obj[key] } 
-            else { total[key] += obj[key] }
-            })     
-        }
-        console.log(total)
-        return total
-    },{})
-    return result
+    const langPromises = langs.map(url => fetch(url).then(res => res.json()))
+    return Promise.all(langPromises)
 })
-
-
-
+.then(dataLangs => {
+  dataLangs.forEach(obj => {
+    Object.keys(obj).forEach(key => {
+      if (!lang[key]) {
+        lang[key] = obj[key]
+      } else {
+        lang[key] += obj[key]
+      }
+    })
+  })
+  console.log(lang)
+  return lang
+})
 
 export default requestLang
