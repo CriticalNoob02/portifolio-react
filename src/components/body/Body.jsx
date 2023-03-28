@@ -1,8 +1,8 @@
 import './body.sass'
 import Summary from './summary/Summary'
-import Cards from './cards/cards'
+import CardsInit from './cardsInit/cardsInit'
 import Graphics from './graphics/Graphics'
-import CardsDark from './cardRepos/CardsRepos'
+import CardRepos from './cardRepos/CardsRepos'
 
 import Img1 from '../../assets/img1.png'
 import Img2 from '../../assets/img2.png'
@@ -23,7 +23,7 @@ function Body(){
                 title={titleSummary}
                 text={textSummary}
             />
-            <Cards 
+            <CardsInit 
                 title={titlesCards}
                 text={textsCards}
                 img={imgsCards}
@@ -31,7 +31,7 @@ function Body(){
             <Graphics 
                 user={'CriticalNoob02'}
             />
-            <CardsDark/>
+            <CardRepos/>
         </div>
     )
 }
