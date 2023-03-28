@@ -9,12 +9,14 @@ function CardRepos(){
 
                 <p className="arrow">ᐊ</p>
 
-                <CardsDark
-                    length={3}
-                    title={'Titles'}
-                    text={'Text Paragraph'}
-                    buttonTitle={'Button Title'}
-                />
+                <div className="cardRespoBox">
+                    <CardsDark
+                        length={3}
+                        title={'Titles'}
+                        text={'Text Paragraph'}
+                        buttonTitle={'Button Title'}
+                    />
+                </div>
 
                 <p className="arrow">ᐅ</p>
 
