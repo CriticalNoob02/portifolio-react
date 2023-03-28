@@ -1,19 +1,26 @@
 import "./cardsRepos.sass"
-import { Fragment } from "react"
+import CardsDark from "../../cards/CardsDark"
 
 
-function CardsDark (){
+function CardRepos(){
     return(
         <div className="bodySection">
-            <div class="cardDarkBorder">
-                <div class="cardDarkBody">
-                    <h1 className="cardDarkTitle">Title</h1>
-                    <p className="cardDarkParagraph">Paragrafos</p>
-                    <button className="buttonRepos">Algo aqui!</button>
-                </div>
+            <div className="cardBox">
+
+                <p className="arrow">ᐊ</p>
+
+                <CardsDark
+                    length={3}
+                    title={'Titles'}
+                    text={'Text Paragraph'}
+                    buttonTitle={'Button Title'}
+                />
+
+                <p className="arrow">ᐅ</p>
+
             </div>
         </div>
     )
 }
 
-export default CardsDark
+export default CardRepos
