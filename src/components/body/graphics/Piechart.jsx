@@ -1,5 +1,6 @@
 import { Pie } from "react-chartjs-2";
 import { Chart } from 'chart.js/auto'
+import { colorscolorThema } from "../../style/variables/colors";
 
 function PieChart(props) {
     const data = {
@@ -15,12 +16,15 @@ function PieChart(props) {
     }
     const options = {
         responsive: true,
+        maintainAspectRatio: false,
         plugins: {
           legend: {
             position: 'bottom',
             labels: {
-                color: '#ece0e0',
+                color: colorThema.backgroun_light ,
+                padding: 20,
                 font:{
+                    size: 15,
                     family: "'Poppins', sans-serif"
                 }
             }
@@ -28,22 +32,23 @@ function PieChart(props) {
           title: {
             display: true,
             text: props.titleText,
-            color: '#ece0e0',
+            color: colorThema.backgroun_light,
+
             font:{
-                size: 15,
+                size: 25,
                 family: "'Poppins', sans-serif"
             },
           },
           tooltip: {
-            backgroundColor: '#ece0e0',
-            titleColor: '#201a1b',
+            backgroundColor: colorThema.backgroun_light,
+            titleColor: colorThema.backgroun_light,
             titleFont: {
               font:{
                 family:"'Poppins', sans-serif"
               }
             },
             titleAlign: 'center',
-            bodyColor: '#201a1b',
+            bodyColor: colorThema.backgroun_light,
             bodyFont: {
               font:{
                 family:"'Poppins', sans-serif"
@@ -51,7 +56,7 @@ function PieChart(props) {
             },
             bodyAlign: 'center',
             borderWidth: 2,
-            borderColor: '#201a1b'
+            borderColor: colorThema.backgroun_light
             
           },
         },
