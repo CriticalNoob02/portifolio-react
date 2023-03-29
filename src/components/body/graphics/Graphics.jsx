@@ -1,5 +1,5 @@
 import "./graphics.sass"
-import requestLang from "../../../service/setGithubDataRepos"
+import requestLang from "../../../service/setGithubLangRepos"
 import PieChart from "./Piechart"
 import React, { useEffect, useState } from 'react'
 import colors from "../../style/variables/colors"
