@@ -3,7 +3,7 @@ import "./CardsVignette.sass"
 function CardsVignette(props) {
     return Array.from({length: 5}, (v, k) => k)
         .map( (i) => (
-            [<div className={`card${i+1}`}>
+            [<div className={`card${i+1}`} key={i}>
                 <img src={props.img[i]} className='imgCard' alt='Foto-Perfil' />
                 <div className="gradienteBackground">
                     <div className="textCard">

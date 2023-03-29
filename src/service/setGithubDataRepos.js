@@ -18,7 +18,6 @@ const requestLang = fetch(`${URLgit}/CriticalNoob02/repos`)
       }
     })
   })
-  console.log(lang)
   return lang
 })
 

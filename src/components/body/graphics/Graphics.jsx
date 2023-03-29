@@ -26,7 +26,6 @@ function Graphics(){
   for(let key in lang){
     labelApi.push(key)
     dataApi.push(lang[key])
-    console.log(labelApi)
   }
   for(let key in colors.colorDefault){
     color.push(colors.colorDefault[key])
