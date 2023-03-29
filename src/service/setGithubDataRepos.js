@@ -18,6 +18,4 @@ const requestRepos = fetch(`${URLgit}/CriticalNoob02/repos`)
     return Promise.all(repos)
 })
 
-const resqu = Promise.resolve(requestRepos)
-console.log(resqu)
-export default resqu
+export default requestRepos
