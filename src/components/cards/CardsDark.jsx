@@ -6,8 +6,8 @@ function CardsDark(props) {
     return Array.from({ length: props.length }, (v, k) => k)
         .map((i) => (
             [<Fragment>
-                <div class="cardDarkBorder">
-                    <div class="cardDarkBody">
+                <div className="cardDarkBorder">
+                    <div className="cardDarkBody">
                         <h1 className="cardDarkTitle">{props.title}</h1>
                         <p className="cardDarkParagraph">{props.text}</p>
                         <ButtonCards
