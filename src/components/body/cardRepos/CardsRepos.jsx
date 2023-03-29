@@ -1,25 +1,38 @@
 import "./cardsRepos.sass"
 import CardsDark from "../../cards/CardsDark"
+import { useRef } from "react"
 
-
+ 
 function CardRepos(){
+    const cardsBox = useRef(null)
+
+    const leftClick = (e) => {
+        e.preventDefault()
+        if(cardsBox.current.scrollLeft == 0){cardsBox.current.scrollLeft += cardsBox.current.scrollWidth}
+        else{cardsBox.current.scrollLeft -= (cardsBox.current.offsetWidth / 3)}  
+    }
+    const rightClick = (e) => {
+        e.preventDefault()
+        if(cardsBox.current.scrollLeft == (cardsBox.current.scrollWidth - cardsBox.current.offsetWidth)){cardsBox.current.scrollLeft = 0}
+        else{cardsBox.current.scrollLeft += (cardsBox.current.offsetWidth / 3)}  
+    }
+
     return(
         <div className="bodySection">
-            <div className="cardBox">
+            <div className="cardContainer">
 
-                <p className="arrow">ᐊ</p>
+                <p className="arrow" onClick={leftClick}>ᐊ</p>
 
-                <div className="cardRespoBox">
+                <div className="cardsBox" ref={cardsBox}>
                     <CardsDark
-                        
-                        length={7}
+                        length={14}
                         title={'Titles'}
                         text={'Text Paragraph'}
                         buttonTitle={'Button Title'}
                     />
                 </div>
 
-                <p className="arrow">ᐅ</p>
+                <p className="arrow" onClick={rightClick}>ᐅ</p>
 
             </div>
         </div>
