@@ -11,7 +11,8 @@ function CardRepos(){
 
                 <div className="cardRespoBox">
                     <CardsDark
-                        length={3}
+                        
+                        length={7}
                         title={'Titles'}
                         text={'Text Paragraph'}
                         buttonTitle={'Button Title'}
