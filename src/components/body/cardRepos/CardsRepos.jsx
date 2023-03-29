@@ -1,10 +1,18 @@
 import "./cardsRepos.sass"
+import React ,{ useRef, useEffect, useState } from "react"
+import requestRepos from "../../../service/setGithubDataRepos"
 import CardsDark from "../../cards/CardsDark"
-import { useRef } from "react"
 
- 
 function CardRepos(){
     const cardsBox = useRef(null)
+
+    const [repositories, setRepos] = useState()
+
+    useEffect(() => {
+        Promise.resolve(requestRepos)
+        .then( res => setRepos(res))
+        .catch(erro => console.log(erro))
+    }, [])
 
     const leftClick = (e) => {
         e.preventDefault()
@@ -20,7 +28,6 @@ function CardRepos(){
     return(
         <div className="bodySection">
             <div className="cardContainer">
-
                 <p className="arrow" onClick={leftClick}>ᐊ</p>
 
                 <div className="cardsBox" ref={cardsBox}>
@@ -33,7 +40,6 @@ function CardRepos(){
                 </div>
 
                 <p className="arrow" onClick={rightClick}>ᐅ</p>
-
             </div>
         </div>
     )
