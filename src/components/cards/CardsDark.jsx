@@ -4,18 +4,18 @@ import "./CardsDark.sass"
 
 function CardsDark(props) {
     return Array.from({ length: props.length }, (v, k) => k)
-        .map((i) => (
-            [<Fragment key={i}>
-                <div className="cardDarkBorder" >
-                    <div className="cardDarkBody">
-                        <h1 className="cardDarkTitle">{props.title}</h1>
-                        <p className="cardDarkParagraph">{props.text}</p>
-                        <ButtonCards
-                            title={props.title}
-                        />
-                    </div>
+        .map((i) => ([
+        <Fragment key={props.id}>
+            <div className="cardDarkBorder" >
+                <div className="cardDarkBody">
+                    <h1 className="cardDarkTitle">{props.title}</h1>
+                    <p className="cardDarkParagraph">{props.text}</p>
+                    <ButtonCards
+                        title={props.buttonTitle}
+                    />
                 </div>
-            </Fragment>]
+            </div>
+        </Fragment> ]
         ))
 }
 
