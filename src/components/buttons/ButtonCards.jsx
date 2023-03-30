@@ -4,7 +4,9 @@ import { Fragment } from "react"
 function ButtonCards(props) {
     return(
         <Fragment>
-            <button className="buttonRepos">{props.title}</button>
+            <a href={props.link} target={"_blank"}>
+                <button className="buttonRepos">{props.title}</button>
+            </a>
         </Fragment>
     )
 }

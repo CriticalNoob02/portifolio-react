@@ -7,10 +7,15 @@ function CardRepos(){
     const cardsBox = useRef(null)
 
     const [repositories, setRepos] = useState()
+    const [isLoading, setisLoading] = useState(true)
 
     useEffect(() => {
         Promise.resolve(requestRepos)
-        .then( res => setRepos(res))
+        .then( res => {
+            setRepos(res)
+            setisLoading(false)
+            console.log(res)
+        })
         .catch(erro => console.log(erro))
     }, [])
 
@@ -27,17 +32,24 @@ function CardRepos(){
 
     return(
         <div className="bodySection">
+            <h1 className="titleReposGit">Meus repositórios publicos</h1>
             <div className="cardContainer">
                 <p className="arrow" onClick={leftClick}>ᐊ</p>
 
+                {isLoading 
+                    ?
+                <p></p>
+                    : 
                 <div className="cardsBox" ref={cardsBox}>
                     <CardsDark
-                        length={14}
-                        title={'Titles'}
-                        text={'Text Paragraph'}
-                        buttonTitle={'Button Title'}
+                        id={repositories}
+                        length={repositories.length}
+                        title={repositories}
+                        text={repositories}
+                        buttonTitle={"Lets code!"}
+                        link={repositories}
                     />
-                </div>
+                </div>}
 
                 <p className="arrow" onClick={rightClick}>ᐅ</p>
             </div>
