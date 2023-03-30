@@ -1,9 +1,9 @@
-import "./cards.sass"
+import "./CardsVignette.sass"
 
-function Card(props) {
+function CardsVignette(props) {
     return Array.from({length: 5}, (v, k) => k)
         .map( (i) => (
-            [<div className={`card${i+1}`}>
+            [<div className={`card${i+1}`} key={i}>
                 <img src={props.img[i]} className='imgCard' alt='Foto-Perfil' />
                 <div className="gradienteBackground">
                     <div className="textCard">
@@ -12,20 +12,7 @@ function Card(props) {
                     </div>
                 </div>
             </div>]
-            ))
+        ))
 }
 
-function Cards(props){
-    return(
-        <div>
-            <div className='cards'>
-               <Card title={props.title}
-                     text={props.text}
-                     img={props.img}
-               />
-            </div>
-        </div>
-    )
-}
-
-export default Cards
+export default CardsVignette
