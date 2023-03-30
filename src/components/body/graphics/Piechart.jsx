@@ -31,15 +31,6 @@ function PieChart(props) {
                 }
             }
           },
-          title: {
-            display: true,
-            text: props.titleText,
-            color: colorThema.primary_dark,
-            font:{
-                size: 25,
-                family: "'Poppins', sans-serif"
-            },
-          },
           tooltip: {
             backgroundColor: colorThema.backgroun_light,
             titleColor: colorThema.backgroun_dark,
@@ -58,7 +49,6 @@ function PieChart(props) {
             bodyAlign: 'center',
             borderWidth: 2,
             borderColor: colorThema.backgroun_dark
-            
           },
         },
     }
