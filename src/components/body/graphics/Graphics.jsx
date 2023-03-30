@@ -1,7 +1,7 @@
 import "./graphics.sass"
 import requestLang from "../../../service/setGithubLangRepos"
 import PieChart from "./Piechart"
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, Fragment } from 'react'
 import colors from "../../style/variables/colors"
 
 function Graphics(){ 
@@ -27,20 +27,21 @@ function Graphics(){
     labelApi.push(key)
     dataApi.push(lang[key])
   }
-  for(let key in colors.colorDefault){
-    color.push(colors.colorDefault[key])
-  }
+  for(let key in colors.colorDefault){color.push(colors.colorDefault[key])}
 
     return(
-        <div className="graphicsBox">
-            <PieChart
-              labelData={labelApi ?? label}
-              descriptionData={labelToolip}
-              valueData={dataApi ?? data}
-              color={color}
-              titleText={title}
-            />
-        </div>
+        <Fragment>
+          <h1 className="titleReposGit">Linguagens usadas nos repositórios</h1>
+          <div className="graphicsBox">
+              <PieChart
+                labelData={labelApi ?? label}
+                descriptionData={labelToolip}
+                valueData={dataApi ?? data}
+                color={color}
+                titleText={title}
+              />
+          </div>
+        </Fragment>
     )
 }
 
