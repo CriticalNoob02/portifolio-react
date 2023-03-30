@@ -6,12 +6,7 @@ const requestRepos = fetch(`${URLgit}/CriticalNoob02/repos`)
     let contador = 0
     const repos = resData.map((line) =>{ 
         const { name, html_url, language } = line
-        const repositories = {
-            id:contador,
-            name:name, 
-            link:html_url, 
-            lang:language
-        }
+        const repositories = [contador, name, html_url, language]
         contador++
         return repositories
      })
