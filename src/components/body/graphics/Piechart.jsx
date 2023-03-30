@@ -52,6 +52,7 @@ function PieChart(props) {
           },
         },
     }
+
     return (
       <div>
         <Pie
