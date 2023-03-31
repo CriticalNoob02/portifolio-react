@@ -1,46 +1,44 @@
 import "./cardsRepos.sass"
 import React ,{ useRef, useEffect, useState } from "react"
+import { motion } from "framer-motion"
 import requestRepos from "../../../service/setGithubDataRepos"
-import CardsDark from "../../cards/CardsDark"
+import CardsDark from "../../../components/cards/CardsDark"
 
 function CardRepos(){
     const cardsBox = useRef(null)
 
     const [repositories, setRepos] = useState()
     const [isLoading, setisLoading] = useState(true)
+    const [width, setWidth] = useState(0)
 
     useEffect(() => {
         Promise.resolve(requestRepos)
         .then( res => {
             setRepos(res)
             setisLoading(false)
-            console.log(res)
         })
         .catch(erro => console.log(erro))
     }, [])
 
-    const leftClick = (e) => {
-        e.preventDefault()
-        if(cardsBox.current.scrollLeft == 0){cardsBox.current.scrollLeft += cardsBox.current.scrollWidth}
-        else{cardsBox.current.scrollLeft -= (cardsBox.current.offsetWidth / 3)}  
-    }
-    const rightClick = (e) => {
-        e.preventDefault()
-        if(cardsBox.current.scrollLeft == (cardsBox.current.scrollWidth - cardsBox.current.offsetWidth)){cardsBox.current.scrollLeft = 0}
-        else{cardsBox.current.scrollLeft += (cardsBox.current.offsetWidth / 3)}  
-    }
+    useEffect(() => {
+        setWidth(cardsBox.current?.scrollWidth - cardsBox.current?.offsetWidth)
+    }, [isLoading,false])
 
     return(
-        <div className="bodySection">
+        <div className="cardDarkSection">
             <h1 className="titleReposGit">Meus repositórios publicos</h1>
             <div className="cardContainer">
-                <p className="arrow" onClick={leftClick}>ᐊ</p>
 
                 {isLoading 
                     ?
                 <p></p>
                     : 
-                <div className="cardsBox" ref={cardsBox}>
+                <motion.div 
+                className="cardsBox" 
+                ref={cardsBox} 
+                drag="x"
+                dragConstraints={{right: 0, left: -width}}
+                >
                     <CardsDark
                         id={repositories}
                         length={repositories.length}
@@ -49,9 +47,8 @@ function CardRepos(){
                         buttonTitle={"Lets code!"}
                         link={repositories}
                     />
-                </div>}
+                </motion.div>}
 
-                <p className="arrow" onClick={rightClick}>ᐅ</p>
             </div>
         </div>
     )

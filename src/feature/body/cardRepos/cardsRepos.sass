@@ -1,0 +1,39 @@
+@import '../../../components/style/variables/colors'
+@import '../../../components/style/variables/fonts'
+
+.cardDarkSection
+    width: 100%
+    height: auto
+    display: flex
+    align-items: center
+    justify-content: space-evenly
+    flex-direction: column
+    margin-bottom: 100px 
+
+.titleReposGit
+    font-family: $Primary-Font
+    color: $Primary_Detail
+    font-size: 2.5rem
+
+.cardContainer
+    $White: #ffffff3b
+    $Transparent: #ffffff00
+    background: linear-gradient(90deg,  $White -10%, $Transparent 10%, $Transparent 90%, $White 110%)
+    border-radius: 35px
+    text-align: center
+    width: 100%
+    height: 100%
+    display: flex
+    align-items: center
+    justify-content: center
+    overflow: hidden
+
+.cardsBox
+    height: 100%
+    width: 100%
+    display: flex
+    // arrow display: none
+
+.cardsBox::-webkit-scrollbar 
+    display: none
+    

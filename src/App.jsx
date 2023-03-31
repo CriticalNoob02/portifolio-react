@@ -1,11 +1,11 @@
 import './components/style/main.sass'
 import React, { useEffect, useState } from 'react'
 import requestData from './service/setGithubDataBase'
-import Header from './components/header/header'
-import Footer from './components/footer/footer'
+import Header from './feature/header/header'
+import Footer from './feature/footer/footer'
 import Avatar from './assets/Avatar.jpg'
 import Selo from './assets/Selo.png'
-import Body from './components/body/Body'
+import Body from './feature/body/Body'
 
 
 function App() {

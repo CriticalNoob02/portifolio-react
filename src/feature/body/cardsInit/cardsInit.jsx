@@ -1,5 +1,5 @@
 import "./cardsInit.sass"
-import CardsVignette from "../../cards/CardsVignette"
+import CardsVignette from "../../../components/cards/CardsVignette"
 
 function CardsInit(props){
     return(
