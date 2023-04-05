@@ -1,0 +1,42 @@
+@import "../style/variables/colors"
+@import "../style/variables/fonts"
+
+.cardDarkBorder
+    min-width: 250px
+    width: 20%
+    height: 300px
+    background-image: linear-gradient(163deg, $Primary_dark 0%, $Secundary_dark 100%)
+    border-radius: 20px
+    margin: 50px
+    transition: all .3s
+    flex: none
+    cursor: grab
+
+.cardDarkBody
+    width: 100%
+    height: 100%
+    background-color: #1a1a1a
+    border-radius: 16px
+    transition: all .2s
+    display: flex
+    align-items: center
+    justify-content: space-evenly
+    text-align: center
+    flex-direction: column
+
+.cardDarkBody:hover 
+    transform: scale(0.98)
+    border-radius: 20px
+
+.cardDarkBorder:hover 
+    box-shadow: 0px 0px 30px 1px #d0ff004d
+
+.cardDarkTitle
+    font-family: $Primary-Font
+    font-size: 1.5rem
+    color: $Primary_Detail
+
+.cardDarkParagraph
+    font-family: $Terth-Font
+    font-size: 1.2rem
+    color: $Primary_Detail

@@ -1,4 +1,4 @@
-import '../../style/components/header/header.sass'
+import './header.sass'
 import { DiJsBadge,DiReact,DiPython,DiSass } from "react-icons/di"
 
 
@@ -7,7 +7,7 @@ function Header(props) {
         <div className="headerBox">
             <div className='avatar'>
                 <div className='color'></div>
-                <img src={props.foto} className='img' />
+                <img src={props.foto} className='img' alt='Foto-Perfil' />
             </div>
             <div className='title'>
                 <h1>{props.nome}</h1>
