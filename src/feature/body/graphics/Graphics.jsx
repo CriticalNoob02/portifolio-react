@@ -9,9 +9,10 @@ function Graphics(){
  const [lang, setLang] = useState()
 
  useEffect(() => {
-      Promise.resolve(requestLang)
-      .then( res => setLang(res))
-      .catch(erro => console.log(erro))
+    fetch("http://localhost:21262/CriticalNoob02/lang")
+    .then( res => res.json() )
+    .then( resData => setLang(resData) )
+    .catch(erro => console.log(erro))
  }, [])
 
   // Dados mockados
@@ -24,6 +25,7 @@ function Graphics(){
   const labelApi = []
   const dataApi = []
   for(let key in lang){
+    console.log(labelApi)
     labelApi.push(key)
     dataApi.push(lang[key])
   }

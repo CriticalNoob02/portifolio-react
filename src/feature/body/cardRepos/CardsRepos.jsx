@@ -1,7 +1,6 @@
 import "./cardsRepos.sass"
 import React ,{ useRef, useEffect, useState } from "react"
 import { motion } from "framer-motion"
-import requestRepos from "../../../service/setGithubDataRepos"
 import CardsDark from "../../../components/cards/CardsDark"
 
 function CardRepos(){
@@ -12,9 +11,10 @@ function CardRepos(){
     const [width, setWidth] = useState(0)
 
     useEffect(() => {
-        Promise.resolve(requestRepos)
-        .then( res => {
-            setRepos(res)
+        fetch("http://localhost:21262/CriticalNoob02/repos")
+        .then( res => res.json() )
+        .then( resData => {
+            setRepos(resData)
             setisLoading(false)
         })
         .catch(erro => console.log(erro))
@@ -40,10 +40,7 @@ function CardRepos(){
                 dragConstraints={{right: 0, left: -width}}
                 >
                     <CardsDark
-                        id={repositories}
-                        length={repositories.length}
-                        title={repositories}
-                        text={repositories}
+                        obj={repositories}
                         buttonTitle={"Lets code!"}
                         link={repositories}
                     />
