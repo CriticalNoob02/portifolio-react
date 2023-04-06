@@ -10,7 +10,7 @@ import Body from './feature/body/Body'
 function App() {
     const [data, setData] = useState([])
     useEffect(() => {
-        fetch("http://localhost:21262/CriticalNoob02/base")
+        fetch("http://localhost:5100/CriticalNoob02/base")
         .then( res => res.json() )
         .then( resData => setData(resData) )
         .catch(erro => console.log(erro))

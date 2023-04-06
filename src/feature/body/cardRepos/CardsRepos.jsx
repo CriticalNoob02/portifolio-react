@@ -11,7 +11,7 @@ function CardRepos(){
     const [width, setWidth] = useState(0)
 
     useEffect(() => {
-        fetch("http://localhost:21262/CriticalNoob02/repos")
+        fetch("http://localhost:5100/CriticalNoob02/repos")
         .then( res => res.json() )
         .then( resData => {
             setRepos(resData)

@@ -8,7 +8,7 @@ function Graphics(){
  const [lang, setLang] = useState()
 
  useEffect(() => {
-    fetch("http://localhost:21262/CriticalNoob02/lang")
+    fetch("http://localhost:5100/CriticalNoob02/lang")
     .then( res => res.json() )
     .then( resData => setLang(resData) )
     .catch(erro => console.log(erro))
