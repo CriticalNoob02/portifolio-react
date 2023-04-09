@@ -15,9 +15,9 @@ function Graphics(){
  }, [])
 
   // Dados mockados
-  const label = ["verde", "Blue", "Yellow"]
+  const label = ["verde", "Blue", "Yellow","Red","Pink"]
   const labelToolip = 'Linhas de Código'
-  const data = [12,19,3]
+  const data = [12,19,3,7,4]
   const title = 'Linguagens mais utilizadas nos projetos'
   // Dados da Api
   const color = []
@@ -35,9 +35,9 @@ function Graphics(){
           <h1 className="titleReposGit">Linguagens usadas nos repositórios</h1>
           <div className="graphicsBox">
               <PieChart
-                labelData={labelApi ?? label}
+                labelData={label}
                 descriptionData={labelToolip}
-                valueData={dataApi ?? data}
+                valueData={ data}
                 color={color}
                 titleText={title}
               />

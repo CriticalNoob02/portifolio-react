@@ -22,11 +22,12 @@ function PieChart(props) {
         plugins: {
           legend: {
             position: 'bottom',
+            align: "start",
             labels: {
                 color: colorThema.primary_dark,
                 padding: 10,
                 font:{
-                    size: 15,
+                    size: 20,
                     family: "'Poppins', sans-serif"
                 }
             }
