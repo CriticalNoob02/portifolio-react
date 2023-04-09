@@ -1,5 +1,5 @@
 import "./graphics.sass"
-import PieChart from "./Piechart"
+import PieChart from "../../../components/charts/Piechart"
 import React, { useEffect, useState, Fragment } from 'react'
 import colors from "../../../components/style/variables/colors"
 
