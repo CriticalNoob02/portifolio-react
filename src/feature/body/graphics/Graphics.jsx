@@ -2,23 +2,23 @@ import "./graphics.sass"
 import PieChart from "../../../components/charts/Piechart"
 import React, { useEffect, useState, Fragment } from 'react'
 import colors from "../../../components/style/variables/colors"
+import Loader from "../../../components/loaders/loader"
 
 function Graphics(){ 
 
  const [lang, setLang] = useState()
+ const [isLoading, setisLoading] = useState(true)
 
  useEffect(() => {
     fetch("http://localhost:5100/CriticalNoob02/lang")
     .then( res => res.json() )
-    .then( resData => setLang(resData) )
+    .then( resData => {
+      setLang(resData)
+      setisLoading(false)
+    })
     .catch(erro => console.log(erro))
  }, [])
-
-  // Dados mockados
-  const label = ["verde", "Blue", "Yellow","Red","Pink"]
-  const labelToolip = 'Linhas de Código'
-  const data = [12,19,3,7,4]
-  const title = 'Linguagens mais utilizadas nos projetos'
+ 
   // Dados da Api
   const color = []
   const labelApi = []
@@ -33,15 +33,23 @@ function Graphics(){
     return(
         <Fragment>
           <h1 className="titleReposGit">Linguagens usadas nos repositórios</h1>
+
+          {
+          isLoading
+            ?
+          <Loader/>
+            :
           <div className="graphicsBox">
-              <PieChart
-                labelData={label}
-                descriptionData={labelToolip}
-                valueData={ data}
-                color={color}
-                titleText={title}
-              />
+            <PieChart
+              labelData={label}
+              descriptionData={labelToolip}
+              valueData={ data}
+              color={color}
+              titleText={title}
+            />
           </div>
+          }
+
         </Fragment>
     )
 }
