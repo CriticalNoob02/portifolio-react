@@ -1,3 +1,5 @@
+[![Conventional Commits](https://img.shields.io/badge/Conventional%20Commits-1.0.0-%23FE5196?logo=conventionalcommits&logoColor=white)](https://conventionalcommits.org)
+
 # Bem vindo ao meu Portifólio React!! ✨
  Projeto para treinar tudo o que aprendi em um ano estudando programação.
  

@@ -14,15 +14,10 @@ function Body(){
     const titlesCards = ['Algo55','Algo','Algo','Algo2','Algo2']
     const textsCards = ['Algo2','Algo2','Algo2','Algo2','Algo2']
     const imgsCards = [Img1,Img2,Img3,Img4,Img5]
-    const titleSummary = 'Titulo da porra do summary'
-    const textSummary = 'Texto base do summary dsfnoldnffodnfodsnf jdfnondofnojdksnfdsofnokldjsn dfdsifodifndsof fdseiofosdif nsdofndiosf    fnofndsofnf'
 
     return(
         <div className="body">
-            <Summary 
-                title={titleSummary}
-                text={textSummary}
-            />
+            <Summary/>
             <CardsInit 
                 title={titlesCards}
                 text={textsCards}
