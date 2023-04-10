@@ -20,6 +20,8 @@ function Graphics(){
  }, [])
  
   // Dados da Api
+  const title = 'Linguagens mais utilizadas nos projetos'
+  const labelToolip = 'Linhas de Código'
   const color = []
   const labelApi = []
   const dataApi = []
@@ -41,9 +43,9 @@ function Graphics(){
             :
           <div className="graphicsBox">
             <PieChart
-              labelData={label}
+              labelData={labelApi}
               descriptionData={labelToolip}
-              valueData={ data}
+              valueData={ dataApi }
               color={color}
               titleText={title}
             />
