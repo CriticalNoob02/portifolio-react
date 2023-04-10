@@ -2,7 +2,6 @@ import './components/style/main.sass'
 import React, { useEffect, useState } from 'react'
 import Header from './feature/header/header'
 import Footer from './feature/footer/footer'
-import Avatar from './assets/Avatar.jpg'
 import Selo from './assets/Selo.png'
 import Body from './feature/body/Body'
 
@@ -19,8 +18,8 @@ function App() {
     return (
         <div className='app'>
             <Header
-                foto={data.avatar ?? Avatar}
-                nome={data.name ?? 'Shrekão da Silva'}
+                foto={data.avatar ?? Selo}
+                nome={data.name ?? 'Adriel Rodirgues'}
             />
             <Body/>           
             <Footer 
