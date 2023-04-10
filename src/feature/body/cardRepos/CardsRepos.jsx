@@ -2,6 +2,7 @@ import "./cardsRepos.sass"
 import React ,{ useRef, useEffect, useState } from "react"
 import { motion } from "framer-motion"
 import CardsDark from "../../../components/cards/CardsDark"
+import Loader from "../../../components/loaders/loader"
 
 function CardRepos(){
     const cardsBox = useRef(null)
@@ -27,26 +28,26 @@ function CardRepos(){
     return(
         <div className="cardDarkSection">
             <h1 className="titleReposGit">Meus repositórios publicos</h1>
-            <div className="cardContainer">
-
+           
                 {isLoading 
                     ?
-                <p></p>
+                <Loader/>
                     : 
-                <motion.div 
-                className="cardsBox" 
-                ref={cardsBox} 
-                drag="x"
-                dragConstraints={{right: 0, left: -width}}
-                >
-                    <CardsDark
-                        obj={repositories}
-                        buttonTitle={"Lets code!"}
-                        link={repositories}
-                    />
-                </motion.div>}
+                <div className="cardContainer">
+                    <motion.div 
+                    className="cardsBox" 
+                    ref={cardsBox} 
+                    drag="x"
+                    dragConstraints={{right: 0, left: -width}}
+                    >
+                        <CardsDark
+                            obj={repositories}
+                            buttonTitle={"Lets code!"}
+                            link={repositories}
+                        />
+                    </motion.div>
+                </div>}
 
-            </div>
         </div>
     )
 }
