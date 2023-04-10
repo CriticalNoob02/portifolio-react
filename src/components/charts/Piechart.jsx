@@ -1,6 +1,6 @@
 import { Pie } from "react-chartjs-2";
 import { Chart } from 'chart.js/auto'
-import  colors from "../../../components/style/variables/colors";
+import  colors from "../../components/style/variables/colors";
 
 const { colorThema } = colors
 
@@ -22,11 +22,12 @@ function PieChart(props) {
         plugins: {
           legend: {
             position: 'bottom',
+            align: "start",
             labels: {
                 color: colorThema.primary_dark,
                 padding: 10,
                 font:{
-                    size: 15,
+                    size: 20,
                     family: "'Poppins', sans-serif"
                 }
             }
