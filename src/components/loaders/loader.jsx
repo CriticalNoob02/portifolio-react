@@ -1,8 +1,10 @@
 import "./loader.sass"
 
-function Loader() {
+function Loader(props) {
     return(
-        <div class="spinner"></div>
+        <div className="baseSpinner" style={{height: props.height ?? '100%'}}>
+        <div className="spinner"></div>
+        </div>
     )
 }
 
