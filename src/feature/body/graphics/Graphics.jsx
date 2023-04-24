@@ -1,20 +1,21 @@
 import "./graphics.sass"
 import PieChart from "../../../components/charts/Piechart"
-import React, { useEffect, useState, Fragment } from 'react'
+import React, { useEffect, useState, Fragment, useContext } from 'react'
+import { isLoading } from "../../../context/isLoading"
 import colors from "../../../components/style/variables/colors"
 import Loader from "../../../components/loaders/loader"
 
 function Graphics(){ 
+  const {loading2, setLoading2} = useContext(isLoading)
 
  const [lang, setLang] = useState()
- const [isLoading, setisLoading] = useState(true)
 
  useEffect(() => {
     fetch("http://localhost:5100/CriticalNoob02/lang")
     .then( res => res.json() )
     .then( resData => {
       setLang(resData)
-      setisLoading(false)
+      setLoading2(false)
     })
     .catch(erro => console.log(erro))
  }, [])
@@ -37,7 +38,7 @@ function Graphics(){
           <h1 className="titleReposGit">Linguagens usadas nos repositórios</h1>
 
           {
-          isLoading
+          loading2
             ?
           <Loader/>
             :

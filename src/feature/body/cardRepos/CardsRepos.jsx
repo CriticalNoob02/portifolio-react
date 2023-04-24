@@ -1,5 +1,6 @@
 import "./cardsRepos.sass"
-import React ,{ useRef, useEffect, useState } from "react"
+import React ,{ useRef, useEffect, useState, useContext } from "react"
+import { isLoading } from "../../../context/isLoading"
 import { motion } from "framer-motion"
 import CardsDark from "../../../components/cards/CardsDark"
 import Loader from "../../../components/loaders/loader"
@@ -7,8 +8,9 @@ import Loader from "../../../components/loaders/loader"
 function CardRepos(){
     const cardsBox = useRef(null)
 
+    const {loading1, setLoading1} = useContext(isLoading)
+
     const [repositories, setRepos] = useState()
-    const [isLoading, setisLoading] = useState(true)
     const [width, setWidth] = useState(0)
 
     useEffect(() => {
@@ -16,20 +18,20 @@ function CardRepos(){
         .then( res => res.json() )
         .then( resData => {
             setRepos(resData)
-            setisLoading(false)
+            setLoading1(false)
         })
         .catch(erro => console.log(erro))
     }, [])
 
     useEffect(() => {
         setWidth(cardsBox.current?.scrollWidth - cardsBox.current?.offsetWidth)
-    }, [isLoading,false])
+    }, [loading1,false])
 
     return(
         <div className="cardDarkSection">
             <h1 className="titleReposGit">Meus repositórios publicos</h1>
            
-                {isLoading 
+                {loading1
                     ?
                 <Loader/>
                     : 
