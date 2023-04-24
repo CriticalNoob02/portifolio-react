@@ -3,7 +3,6 @@ import { isLoading } from './context/isLoading'
 import Loader from './components/loaders/loader'
 import Header from './feature/header/header'
 import Footer from './feature/footer/footer'
-import Selo from './assets/Selo.png'
 import Body from './feature/body/Body'
 
 
@@ -31,14 +30,14 @@ function App() {
                     :
                 <Fragment>
                 <Header
-                    foto={data.avatar ?? Selo}
-                    nome={data.name ?? 'Adriel Rodrigues'}
+                    foto={data.avatar}
+                    nome={data.name}
                 />
                 <Body />
                 <Footer 
-                    selo={data.avatar ?? Selo}
-                    link={data.url ?? 'https://github.com/CriticalNoob02'}
-                    nome={data.login ?? "CriticalNoob02"}
+                    selo={data.avatar}
+                    link={data.url}
+                    nome={data.login}
                 />
                 </Fragment>}
         </Fragment>
