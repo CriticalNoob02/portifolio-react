@@ -3,7 +3,7 @@ import Summary from './summary/Summary'
 import CardsInit from './cardsInit/cardsInit'
 import Graphics from './graphics/Graphics'
 import CardRepos from './cardRepos/CardsRepos'
-
+import GraphicsLine from './graphicsLine/GraphicsLine'
 import Img1 from '../../assets/img1.png'
 import Img2 from '../../assets/img2.png'
 import Img3 from '../../assets/img3.png'
@@ -27,6 +27,7 @@ function Body(){
                 user={'CriticalNoob02'}
             />
             <CardRepos/>
+            <GraphicsLine/>
         </div>
     )
 }
