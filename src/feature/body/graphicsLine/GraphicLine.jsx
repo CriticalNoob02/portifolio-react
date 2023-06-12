@@ -26,7 +26,6 @@ function GraphicLine(){
   const labelApi = []
   const dataApi = []
   for(let key in lang){
-    console.log(labelApi)
     labelApi.push(key)
     dataApi.push(lang[key])
   }
