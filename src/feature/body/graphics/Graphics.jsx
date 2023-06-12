@@ -1,4 +1,4 @@
-import "./graphics.sass"
+import "./graphics.scss"
 import PieChart from "../../../components/charts/Piechart"
 import React, { useEffect, useState, Fragment, useContext } from 'react'
 import { isLoading } from "../../../context/isLoading"
