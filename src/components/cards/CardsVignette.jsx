@@ -8,7 +8,7 @@ function CardsVignette(props) {
                 <div className="gradienteBackground">
                     <div className="textCard">
                         <h1>{props.title[i]}</h1>
-                        <p>{props.text[i]}</p>
+                        <a href={props.link[i]} target={"_blank"}><p>Documentação</p></a>
                     </div>
                 </div>
             </div>]

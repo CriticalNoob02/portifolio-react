@@ -42,7 +42,6 @@
     margin-inline: -5px
     text-align: center
     filter: drop-shadow(0 0 0.3rem $Secundary_dark)
-    font-size: 20px
     z-index: 3
     transition: 0.5s
     &:hover
@@ -90,6 +89,13 @@
     left: 50%
     transform: translate(-50%, -50%)
     user-select: none
+    a:visited, a:link
+        text-decoration: none
+        color: $Background_dark
+    a:hover
+        transition: 0.2s
+        color: $Primary_dark
+        text-shadow: 0px 0px 3px $Background_dark
 
 .imgCard
     height: 100%

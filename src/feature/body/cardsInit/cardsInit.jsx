@@ -7,7 +7,7 @@ function CardsInit(props){
             <div className='cards'>
                <CardsVignette
                     title={props.title}
-                    text={props.text}
+                    link={props.link}
                     img={props.img}
                />
             </div>
