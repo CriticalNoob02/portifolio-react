@@ -67,7 +67,7 @@ function LineChart(props) {
         <Line
           data={data} 
           options={options}  
-          height= {350}
+          height= {450}
         />
       </div>
     )

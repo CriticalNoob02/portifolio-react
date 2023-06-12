@@ -22,12 +22,12 @@ function PieChart(props) {
         plugins: {
           legend: {
             position: 'bottom',
-            align: "start",
+            align: "center",
             labels: {
                 color: colorThema.primary_dark,
-                padding: 10,
+                padding: 50,
                 font:{
-                    size: 20,
+                    size: 25,
                     family: "'Poppins', sans-serif"
                 }
             }
@@ -58,7 +58,8 @@ function PieChart(props) {
       <div>
         <Pie
           data={data} 
-          options={options}  
+          options={options}
+          height= {550}
         />
       </div>
     )
