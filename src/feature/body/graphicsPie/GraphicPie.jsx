@@ -1,11 +1,11 @@
-import "./graphics.scss"
+import "./graphicPie.scss"
 import PieChart from "../../../components/charts/Piechart"
 import React, { useEffect, useState, Fragment, useContext } from 'react'
 import { isLoading } from "../../../context/isLoading"
 import colors from "../../../components/style/variables/colors"
 import Loader from "../../../components/loaders/loader"
 
-function Graphics(){ 
+function GraphicPie(){ 
   const {loading2, setLoading2} = useContext(isLoading)
 
  const [lang, setLang] = useState()
@@ -35,7 +35,7 @@ function Graphics(){
 
     return(
         <Fragment>
-          <h1 className="titleReposGit">Linguagens usadas nos repositórios</h1>
+          <h1 className="titleReposGit">Linguagens dos repositórios</h1>
 
           {
           loading2
@@ -57,4 +57,4 @@ function Graphics(){
     )
 }
 
-export default Graphics
+export default GraphicPie

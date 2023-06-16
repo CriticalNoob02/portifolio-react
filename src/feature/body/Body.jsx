@@ -1,7 +1,7 @@
 import './body.sass'
 import Summary from './summary/Summary'
 import CardsInit from './cardsInit/cardsInit'
-import Graphics from './graphics/Graphics'
+import GraphicPie from './graphicsPie/GraphicPie'
 import CardRepos from './cardRepos/CardsRepos'
 import GraphicLine from './graphicsLine/GraphicLine'
 
@@ -24,7 +24,7 @@ function Body(){
                 link={textsCards}
                 img={imgsCards}
             />
-            <Graphics 
+            <GraphicPie 
                 user={'CriticalNoob02'}
             />
             <CardRepos/>
