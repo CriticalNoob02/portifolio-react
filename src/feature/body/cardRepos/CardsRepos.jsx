@@ -29,7 +29,7 @@ function CardRepos(){
 
     return(
         <div className="cardDarkSection">
-            <h1 className="titleReposGit">Meus repositórios publicos</h1>
+            <h1 className="titleReposGit">Repositórios publicos</h1>
            
                 {loading1
                     ?

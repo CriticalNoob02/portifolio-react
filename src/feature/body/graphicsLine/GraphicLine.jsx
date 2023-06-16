@@ -21,7 +21,7 @@ function GraphicLine(){
  
   // Dados da Api
   const title = 'Eventos no Github'
-  const labelToolip = 'Eventos'
+  const labelToolip = 'Eventos do dia'
   const color = []
   const labelApi = []
   const dataApi = []
@@ -33,7 +33,7 @@ function GraphicLine(){
 
     return(
         <Fragment>
-          <h1 className="titleReposGit">Eventos do Github</h1>
+          <h1 className="titleReposGit">Eventos do perfil</h1>
 
           {
           loading4
