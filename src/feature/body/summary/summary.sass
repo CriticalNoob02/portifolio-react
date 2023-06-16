@@ -22,7 +22,7 @@
         font-size: 2rem
         position: fixed
         left: 10%
-        color: $Secundary_dark
+        color: map-get($SECUNDARY_COLOR, Dark)
         animation: $Bright_Pulse 4s infinite
 
     &::after
@@ -30,14 +30,14 @@
         font-size: 2rem
         position: fixed
         right: 10%
-        color: $Secundary_dark
+        color: map-get($SECUNDARY_COLOR, Dark)
         animation: $Bright_Pulse_Inverter 4s infinite  
 
 
 .summary h1
     font-family: $Primary-Font
     font-size: 2.5rem
-    color: $Primary_Detail
+    color: map-get($PRIMARY_DETAIL_COLOR, Light)
     letter-spacing: 2px
     margin-bottom: 24px
 
@@ -45,4 +45,4 @@
     font-family: $Terth-Font
     font-size: 1.6rem
     margin-bottom: 24px
-    color: $Primary_Detail
+    color: map-get($PRIMARY_DETAIL_COLOR, Light)

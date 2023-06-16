@@ -7,7 +7,7 @@
     height: 20%
     margin: 20px
     border-radius: 20px
-    background-color: $Secundary_dark
+    background-color: map-get($SECUNDARY_COLOR, Dark)
     display: flex
     align-items: center
     justify-content: space-around
@@ -16,7 +16,7 @@
     width: 135px
     height: 135px
     border-radius: 100px
-    background-color: $Background
+    background-color: map-get($BACKGROUND, Light)
     overflow: hidden
     display: flex
     justify-content: center
@@ -30,7 +30,7 @@
 .color
     height: 100%
     width: 40%
-    background: linear-gradient(315deg, $Background_dark, #494949)
+    background: linear-gradient(315deg, map-get($BACKGROUND, Dark), #494949)
     animation: $Rotation 4s linear infinite
     transition: 0.3s
 
@@ -47,12 +47,12 @@
     justify-content: center
     align-items: center
     flex-direction: column
-    background-color: $Tertiary_dark
+    background-color: map-get($TERTIARY_COLOR, Dark)
 
 .title
     font-family: $Meme-Font
     font-size: 1.4rem
-    background-color: $Background_dark
+    background-color: map-get($BACKGROUND, Dark)
     padding: 20px
     border-radius: 20px
     cursor: none

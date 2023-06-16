@@ -5,7 +5,7 @@
     width: 100%
     height: 8%
     border-radius: 25px 25px 0 0
-    background-color: $Secundary_dark
+    background-color: map-get($SECUNDARY_COLOR, Dark)
     font-family: $Primary-Font
     display: flex
     justify-content: center
@@ -14,10 +14,10 @@
 
 .signature a
     text-decoration: none
-    color: $Background_dark
+    color: map-get($BACKGROUND, Dark)
     font-weight: 600
     &:hover 
-        color: $Erro
+        color: map-get($ERRO_COLOR, Light)
 
 .stamp
     width: 50px

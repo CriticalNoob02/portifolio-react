@@ -9,7 +9,7 @@
     display: flex
     justify-content: center
     text-align: center
-    filter: drop-shadow(0 0 0.3rem $Secundary_dark)
+    filter: drop-shadow(0 0 0.3rem map-get($SECUNDARY_COLOR, Dark))
     z-index: 1
     transition: 0.5s
     &:hover
@@ -25,7 +25,7 @@
     display: flex
     justify-content: center
     text-align: center
-    filter: drop-shadow(0 0 0.3rem $Secundary_dark)
+    filter: drop-shadow(0 0 0.3rem map-get($SECUNDARY_COLOR, Dark))
     z-index: 2
     transition: 0.5s
     &:hover
@@ -41,7 +41,7 @@
     justify-content: center
     margin-inline: -5px
     text-align: center
-    filter: drop-shadow(0 0 0.3rem $Secundary_dark)
+    filter: drop-shadow(0 0 0.3rem map-get($SECUNDARY_COLOR, Dark))
     z-index: 3
     transition: 0.5s
     &:hover
@@ -57,7 +57,7 @@
     display: flex
     justify-content: center
     text-align: center
-    filter: drop-shadow(0 0 0.3rem $Secundary_dark)
+    filter: drop-shadow(0 0 0.3rem map-get($SECUNDARY_COLOR, Dark))
     z-index: 2
     transition: 0.5s
     &:hover
@@ -73,7 +73,7 @@
     display: flex
     justify-content: center
     text-align: center
-    filter: drop-shadow(0 0 0.3rem $Secundary_dark)
+    filter: drop-shadow(0 0 0.3rem map-get($SECUNDARY_COLOR, Dark))
     z-index: 1
     transition: 0.5s
     &:hover
@@ -91,11 +91,11 @@
     user-select: none
     a:visited, a:link
         text-decoration: none
-        color: $Background_dark
+        color: map-get($BACKGROUND, Dark)
     a:hover
         transition: 0.2s
-        color: $Primary_dark
-        text-shadow: 0px 0px 3px $Background_dark
+        color: map-get($PRIMARY_COLOR, Dark)
+        text-shadow: 0px 0px 3px map-get($BACKGROUND, Dark)
 
 .imgCard
     height: 100%
