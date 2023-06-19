@@ -1,14 +1,14 @@
 @import "../style/variables/colors"
 @import "../style/variables/fonts"
+@import "../style/variables/mixins"
 
 .card1
+    @include FLEX_CENTER()
+    text-align: center
     overflow: hidden
     margin-inline: -5px
     height: 400px
     width: 25%
-    display: flex
-    justify-content: center
-    text-align: center
     filter: drop-shadow(0 0 0.3rem map-get($SECUNDARY_COLOR, Dark))
     z-index: 1
     transition: 0.5s
@@ -18,13 +18,12 @@
         height: 400px
         width: 85%
 .card2
+    @include FLEX_CENTER()
+    text-align: center
     overflow: hidden
     margin-inline: -5px
     height: 500px
     width: 25%
-    display: flex
-    justify-content: center
-    text-align: center
     filter: drop-shadow(0 0 0.3rem map-get($SECUNDARY_COLOR, Dark))
     z-index: 2
     transition: 0.5s
@@ -34,13 +33,12 @@
         height: 500px
         width: 85%
 .card3
+    @include FLEX_CENTER()
+    text-align: center
     overflow: hidden
     height: 600px
     width: 25%
-    display: flex
-    justify-content: center
     margin-inline: -5px
-    text-align: center
     filter: drop-shadow(0 0 0.3rem map-get($SECUNDARY_COLOR, Dark))
     z-index: 3
     transition: 0.5s
@@ -50,13 +48,12 @@
         height: 600px
         width: 800px
 .card4
+    @include FLEX_CENTER()
+    text-align: center
     overflow: hidden
     margin-inline: -5px
     height: 500px
     width: 200px
-    display: flex
-    justify-content: center
-    text-align: center
     filter: drop-shadow(0 0 0.3rem map-get($SECUNDARY_COLOR, Dark))
     z-index: 2
     transition: 0.5s
@@ -66,13 +63,12 @@
         height: 500px
         width: 85%
 .card5
+    @include FLEX_CENTER()
+    text-align: center
     overflow: hidden
     margin-inline: -5px
     height: 400px
     width: 25%
-    display: flex
-    justify-content: center
-    text-align: center
     filter: drop-shadow(0 0 0.3rem map-get($SECUNDARY_COLOR, Dark))
     z-index: 1
     transition: 0.5s
