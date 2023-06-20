@@ -1,5 +1,6 @@
 import React, { useEffect, useState, Fragment, useContext } from 'react'
 import { isLoading } from './context/isLoading'
+import ThemeContextParent  from './context/ThemeParent'
 import Loader from './components/loaders/loader'
 import Header from './feature/header/header'
 import Footer from './feature/footer/footer'
@@ -23,24 +24,26 @@ function App() {
     }, [])
 
     return (
-        <Fragment>
-                {loading3
-                    ?
-                <Loader height={'100vh'} />
-                    :
-                <Fragment>
-                <Header
-                    foto={data.avatar}
-                    nome={data.name}
-                />
-                <Body />
-                <Footer 
-                    selo={data.avatar}
-                    link={data.url}
-                    nome={data.login}
-                />
-                </Fragment>}
-        </Fragment>
+        <ThemeContextParent>
+            <Fragment>
+                    {loading3
+                        ?
+                    <Loader height={'100vh'} />
+                        :
+                    <Fragment>
+                    <Header
+                        foto={data.avatar}
+                        nome={data.name}
+                    />
+                    <Body />
+                    <Footer 
+                        selo={data.avatar}
+                        link={data.url}
+                        nome={data.login}
+                    />
+                    </Fragment>}
+            </Fragment>
+        </ThemeContextParent>
     )
 }
 export default App
