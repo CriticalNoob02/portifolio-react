@@ -24,7 +24,6 @@ function App() {
     }, [])
 
     return (
-        <ThemeContextParent>
             <Fragment>
                     {loading3
                         ?
@@ -43,7 +42,6 @@ function App() {
                     />
                     </Fragment>}
             </Fragment>
-        </ThemeContextParent>
     )
 }
 export default App
