@@ -9,7 +9,7 @@ function Header(props) {
 
     return (
         <div className={`headerBox ${globalTheme}`}>
-            <div className='avatar'>
+            <div className={`avatar ${globalTheme}`}>
                 <div className='color'></div>
                 <img src={props.foto} className={`img ${globalTheme}`} alt='Foto-Perfil' />
             </div>
