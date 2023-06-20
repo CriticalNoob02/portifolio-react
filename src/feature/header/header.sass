@@ -1,13 +1,14 @@
 @import '../../components/style/variables/colors'
 @import '../../components/style/variables/fonts'
 @import '../../components/style/variables/keyframes'
+@import '../../components/style/themes/themes'
 
 .headerBox
     max-width: 100%
     height: 20%
     margin: 20px
     border-radius: 20px
-    background-color: map-get($SECUNDARY_COLOR, Dark)
+    @include themify('background-color', 'secondary')
     display: flex
     align-items: center
     justify-content: space-around
@@ -47,12 +48,12 @@
     justify-content: center
     align-items: center
     flex-direction: column
-    background-color: map-get($TERTIARY_COLOR, Dark)
+    @include themify('background-color', 'tertiary')
 
 .title
     font-family:  map-get($FONT, Meme)
     font-size: 1.4rem
-    background-color: map-get($BACKGROUND, Dark)
+    @include themify('background-color', 'background')
     padding: 20px
     border-radius: 20px
     cursor: none
