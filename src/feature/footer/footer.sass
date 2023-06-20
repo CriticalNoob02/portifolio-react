@@ -1,23 +1,24 @@
 @import '../../components/style/variables/colors'
 @import '../../components/style/variables/fonts'
+@import '../../components/style/themes/themes'
 
 .footerBox
     width: 100%
     height: 8%
     border-radius: 25px 25px 0 0
-    background-color: map-get($SECUNDARY_COLOR, Dark)
+    @include themify('background-color', 'secondary')
     font-family: map-get($FONT, Primary)
     display: flex
     justify-content: center
     align-items: center
     user-select: none
 
-.signature a
+.signature
     text-decoration: none
-    color: map-get($BACKGROUND, Dark)
+    @include themify('color', 'background')
     font-weight: 600
     &:hover 
-        color: map-get($ERRO_COLOR, Light)
+        @include themify('color', 'erroDetail')
 
 .stamp
     width: 50px
