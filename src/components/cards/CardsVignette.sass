@@ -1,6 +1,7 @@
 @import "../style/variables/colors"
 @import "../style/variables/fonts"
 @import "../style/variables/mixins"
+@import "../style/themes/themes"
 
 .card1
     @include FLEX_CENTER()
@@ -9,7 +10,7 @@
     margin-inline: -5px
     height: 400px
     width: 25%
-    filter: drop-shadow(0 0 0.3rem map-get($SECUNDARY_COLOR, Dark))
+    @include dropShadownTheme('filter','secondary', '0 0 0.3rem')
     z-index: 1
     transition: 0.5s
     &:hover
@@ -24,7 +25,7 @@
     margin-inline: -5px
     height: 500px
     width: 25%
-    filter: drop-shadow(0 0 0.3rem map-get($SECUNDARY_COLOR, Dark))
+    @include dropShadownTheme('filter','secondary', '0 0 0.3rem')
     z-index: 2
     transition: 0.5s
     &:hover
@@ -39,7 +40,7 @@
     height: 600px
     width: 25%
     margin-inline: -5px
-    filter: drop-shadow(0 0 0.3rem map-get($SECUNDARY_COLOR, Dark))
+    @include dropShadownTheme('filter','secondary', '0 0 0.3rem')
     z-index: 3
     transition: 0.5s
     &:hover
@@ -54,7 +55,7 @@
     margin-inline: -5px
     height: 500px
     width: 200px
-    filter: drop-shadow(0 0 0.3rem map-get($SECUNDARY_COLOR, Dark))
+    @include dropShadownTheme('filter','secondary', '0 0 0.3rem')
     z-index: 2
     transition: 0.5s
     &:hover
@@ -69,7 +70,7 @@
     margin-inline: -5px
     height: 400px
     width: 25%
-    filter: drop-shadow(0 0 0.3rem map-get($SECUNDARY_COLOR, Dark))
+    @include dropShadownTheme('filter','secondary', '0 0 0.3rem')
     z-index: 1
     transition: 0.5s
     &:hover
