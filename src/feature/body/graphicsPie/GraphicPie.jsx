@@ -1,14 +1,17 @@
 import "./graphicPie.scss"
 import PieChart from "../../../components/charts/Piechart"
 import React, { useEffect, useState, Fragment, useContext } from 'react'
+import { ThemeContext } from '../../../context/ThemeParent'
 import { isLoading } from "../../../context/isLoading"
 import colors from "../../../components/style/variables/colors"
 import Loader from "../../../components/loaders/loader"
 
 function GraphicPie(){ 
+
+  const { globalTheme } = useContext(ThemeContext)
   const {loading2, setLoading2} = useContext(isLoading)
 
- const [lang, setLang] = useState()
+  const [lang, setLang] = useState()
 
  useEffect(() => {
     fetch("http://localhost:5100/CriticalNoob02/lang")
@@ -27,7 +30,6 @@ function GraphicPie(){
   const labelApi = []
   const dataApi = []
   for(let key in lang){
-    console.log(labelApi)
     labelApi.push(key)
     dataApi.push(lang[key])
   }
@@ -35,7 +37,7 @@ function GraphicPie(){
 
     return(
         <Fragment>
-          <h1 className="titleReposGit">Linguagens dos repositórios</h1>
+          <h1 className={`titleBody ${globalTheme}`}>Linguagens dos repositórios</h1>
 
           {
           loading2
