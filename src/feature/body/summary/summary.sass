@@ -1,6 +1,7 @@
 @import "../../../components/style/variables/colors"
 @import '../../../components/style/variables/fonts'
 @import '../../../components/style/variables/keyframes'
+@import '../../../components/style/themes/themes'
 
 .summary
     width: 80% 
@@ -9,7 +10,7 @@
     margin: 80px 0px 100px 0px
     text-align: center
     border-radius: 20px
-    background: #6161611f
+    @include themify('background-color', 'surface')
     box-shadow: 0 8px 32px 0 #ffffff2e
     backdrop-filter: blur( 14px )
     -webkit-backdrop-filter: blur( 14px )
@@ -34,15 +35,16 @@
         animation: $Bright_Pulse_Inverter 4s infinite  
 
 
-.summary h1
+.titleBody
     font-family: map-get($FONT, Primary)
-    font-size: 2.5rem
-    color: map-get($PRIMARY_DETAIL_COLOR, Light)
+    @include themify('color', 'tertiary')
     letter-spacing: 2px
-    margin-bottom: 24px
+    user-select: none
+    font-size: 2.5rem
+    padding: 30px 0
 
-.summary p
+.paragraphBody
     font-family: map-get($FONT, Terthary)
     font-size: 1.6rem
     margin-bottom: 24px
-    color: map-get($PRIMARY_DETAIL_COLOR, Light)
+    @include themify('color', 'tertiary')
