@@ -1,6 +1,7 @@
 import "./cardsRepos.sass"
 import React ,{ useRef, useEffect, useState, useContext } from "react"
 import { isLoading } from "../../../context/isLoading"
+import { ThemeContext } from '../../../context/ThemeParent'
 import { motion } from "framer-motion"
 import CardsDark from "../../../components/cards/CardsDark"
 import Loader from "../../../components/loaders/loader"
@@ -9,6 +10,7 @@ function CardRepos(){
     const cardsBox = useRef(null)
 
     const {loading1, setLoading1} = useContext(isLoading)
+    const { globalTheme } = useContext(ThemeContext)
 
     const [repositories, setRepos] = useState()
     const [width, setWidth] = useState(0)
@@ -29,7 +31,7 @@ function CardRepos(){
 
     return(
         <div className="cardDarkSection">
-            <h1 className="titleReposGit">Repositórios publicos</h1>
+            <h1 className={`titleBody ${globalTheme}`}>Repositórios publicos</h1>
            
                 {loading1
                     ?
