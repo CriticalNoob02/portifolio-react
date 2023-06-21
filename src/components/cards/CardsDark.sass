@@ -1,11 +1,13 @@
 @import "../style/variables/colors"
 @import "../style/variables/fonts"
+@import "../style/themes/themes"
+
 
 .cardDarkBorder
     min-width: 250px
     width: 20%
     height: 300px
-    background-image: linear-gradient(163deg, map-get($PRIMARY_COLOR, Dark) 0%, map-get($SECUNDARY_COLOR, Dark) 100%)
+    @include linearGradientTheme('background', 'primary', 'secondary', '163deg')
     border-radius: 20px
     margin: 50px
     transition: all .3s
@@ -15,7 +17,7 @@
 .cardDarkBody
     width: 100%
     height: 100%
-    background-color: #1a1a1a
+    @include themify('background-color', 'surface')
     border-radius: 16px
     transition: all .2s
     display: flex
@@ -29,14 +31,14 @@
     border-radius: 20px
 
 .cardDarkBorder:hover 
-    box-shadow: 0px 0px 30px 1px #d0ff004d
+    @include boxShadownTheme('box-shadow', 'primaryDetail', '0px 0px 30px 1px')
 
 .cardDarkTitle
     font-family: map-get($FONT, Primary)
     font-size: 1.5rem
-    color: map-get($SURFACE, Dark)
+    @include themify('color', 'tertiary')
 
 .cardDarkParagraph
     font-family: map-get($FONT, Terthary)
     font-size: 1.2rem
-    color: map-get($PRIMARY_DETAIL_COLOR, Light)
+    @include themify('color', 'primaryDetail')
