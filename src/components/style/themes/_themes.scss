@@ -13,6 +13,14 @@ $THEMES: (
         }
     }
 };
+
+@mixin boxShadownTheme($property, $key, $value) {
+    @each $theme, $color in $THEMES {
+        &.#{$theme} {
+            #{$property}: #{$value} map-get($color, $key);
+        }
+    }
+};
 /// Função para alterar tema usando Drop-shadown;
 @mixin dropShadownTheme($property, $key, $values){
     @each $theme, $color in $THEMES {
