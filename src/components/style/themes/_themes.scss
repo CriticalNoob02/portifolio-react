@@ -12,4 +12,12 @@ $THEMES: (
             #{$property}: map-get($color, $key);
         }
     }
-}
+};
+
+@mixin dropShadownTheme($property, $key, $values){
+    @each $theme, $color in $THEMES {
+        &.#{$theme} {
+            #{$property}: drop-shadow( #{$values} map-get($color, $key));
+        }
+    }
+};
