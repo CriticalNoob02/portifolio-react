@@ -5,7 +5,7 @@ $THEMES: (
     DARK: $DARK,
     LIGHT: $LIGHT,
 );
-
+/// Função para alterar tema usando uma função básica;
 @mixin themify($property, $key) {
     @each $theme, $color in $THEMES {
         &.#{$theme} {
@@ -13,11 +13,19 @@ $THEMES: (
         }
     }
 };
-
+/// Função para alterar tema usando Drop-shadown;
 @mixin dropShadownTheme($property, $key, $values){
     @each $theme, $color in $THEMES {
         &.#{$theme} {
             #{$property}: drop-shadow( #{$values} map-get($color, $key));
+        }
+    }
+};
+/// Função para alterar tema usando Linear-Gradient;
+@mixin linearGradientTheme($property, $key, $key2, $deg){
+    @each $theme, $color in $THEMES {
+        &.#{$theme} {
+            #{$property}: linear-gradient( #{$deg}, map-get($color, $key) 0%, map-get($color, $key2)100%);
         }
     }
 };
