@@ -37,7 +37,7 @@ function CardRepos(){
                     ?
                 <Loader/>
                     : 
-                <div className="cardContainer">
+                <div className={`cardContainer ${globalTheme}`}>
                     <motion.div 
                     className="cardsBox" 
                     ref={cardsBox} 
