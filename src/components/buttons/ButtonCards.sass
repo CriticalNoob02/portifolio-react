@@ -1,5 +1,6 @@
 @import "../style/variables/colors"
 @import "../style/variables/fonts"
+@import "../style/themes/themes"
 
 .buttonRepos 
   font-family: map-get($FONT, Primary)
@@ -11,14 +12,16 @@
   overflow: hidden
   transition: all 0.3s
   line-height: 1.4em
-  border: 2px solid map-get($PRIMARY_COLOR, Dark)
+  @include boxShadownTheme('border', 'primary', '2px solid')
   background: linear-gradient(to right, rgba(27, 253, 156, 0.1) 1%, transparent 40%,transparent 60% , rgba(27, 253, 156, 0.1) 100%)
-  color: map-get($PRIMARY_COLOR, Dark)
+  @include themify('color','primary')
+  // color: map-get($PRIMARY_COLOR, Dark)
   box-shadow: inset 0 0 10px rgba(27, 253, 156, 0.4), 0 0 9px 3px rgba(27, 253, 156, 0.1)
   cursor: pointer
 
 .buttonRepos:hover 
-  color: map-get($PRIMARY_COLOR, Dark)
+  @include themify('color','primary')
+  // color: map-get($PRIMARY_COLOR, Dark)
   box-shadow: inset 0 0 10px rgba(27, 253, 156, 0.6), 0 0 9px 3px rgba(27, 253, 156, 0.2)
 
 .buttonRepos:before 
