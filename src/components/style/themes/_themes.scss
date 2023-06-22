@@ -13,7 +13,7 @@ $THEMES: (
         }
     }
 };
-
+/// Função para alterar tema usando Box-shadown;
 @mixin boxShadownTheme($property, $key, $value) {
     @each $theme, $color in $THEMES {
         &.#{$theme} {
