@@ -5,6 +5,7 @@ $THEMES: (
     DARK: $DARK,
     LIGHT: $LIGHT,
 );
+
 /// Função para alterar tema usando uma função básica;
 @mixin themify($property, $key) {
     @each $theme, $color in $THEMES {
@@ -13,6 +14,7 @@ $THEMES: (
         }
     }
 };
+
 /// Função para alterar tema usando Box-shadown;
 @mixin boxShadownTheme($property, $key, $value) {
     @each $theme, $color in $THEMES {
@@ -21,6 +23,17 @@ $THEMES: (
         }
     }
 };
+
+/// Função para alterar tema usando Box-shadown com inset;
+@mixin boxShadowThemeInset($property, $value, $key, $value2, $key2) {
+    @each $theme, $color in $THEMES {
+        &.#{$theme} {
+            #{$property}: #{$value} map-get($color, $key),
+                          #{$value2} map-get($color, $key2);
+        };
+    }
+};
+
 /// Função para alterar tema usando Drop-shadown;
 @mixin dropShadownTheme($property, $key, $values){
     @each $theme, $color in $THEMES {
@@ -29,11 +42,12 @@ $THEMES: (
         }
     }
 };
-/// Função para alterar tema usando Linear-Gradient;
-@mixin linearGradientTheme($property, $key, $key2, $deg){
+
+/// Função para alterar tema usando Linear-Gradient simples;
+@mixin linearGradientTheme($property, $value1, $key1, $value2, $key2, $value3){
     @each $theme, $color in $THEMES {
         &.#{$theme} {
-            #{$property}: linear-gradient( #{$deg}, map-get($color, $key) 0%, map-get($color, $key2)100%);
+            #{$property}: linear-gradient(#{$value1}, map-get($color, $key1) #{$value2}, map-get($color, $key2) #{$value3});
         }
     }
-};
+}; 
