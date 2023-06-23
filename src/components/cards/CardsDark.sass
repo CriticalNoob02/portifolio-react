@@ -2,12 +2,11 @@
 @import "../style/variables/fonts"
 @import "../style/themes/themes"
 
-
 .cardDarkBorder
     min-width: 250px
     width: 20%
     height: 300px
-    @include linearGradientTheme('background', '163deg', 'primary', ' 0%', 'secondary', '100%')
+    @include linearGradientTheme('background', '163deg', 'secondary', ' 0%', 'tertiary', '100%')
     border-radius: 20px
     margin: 50px
     transition: all .3s
@@ -31,14 +30,14 @@
     border-radius: 20px
 
 .cardDarkBorder:hover 
-    @include boxShadowTheme('box-shadow', 'primaryDetail', '0px 0px 30px 1px')
+    @include boxShadowTheme('box-shadow', 'secondary', '0px 0px 30px 1px')
 
 .cardDarkTitle
     font-family: map-get($FONT, Primary)
     font-size: 1.5rem
-    @include themify('color', 'tertiary')
+    @include themify('color', 'contrast')
 
 .cardDarkParagraph
     font-family: map-get($FONT, Terthary)
     font-size: 1.2rem
-    @include themify('color', 'primaryDetail')
+    @include themify('color', 'secondary')
