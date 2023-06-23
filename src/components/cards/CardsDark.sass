@@ -7,7 +7,7 @@
     min-width: 250px
     width: 20%
     height: 300px
-    @include linearGradientTheme('background', 'primary', 'secondary', '163deg')
+    @include linearGradientTheme('background', '163deg', 'primary', ' 0%', 'secondary', '100%')
     border-radius: 20px
     margin: 50px
     transition: all .3s
@@ -31,7 +31,7 @@
     border-radius: 20px
 
 .cardDarkBorder:hover 
-    @include boxShadownTheme('box-shadow', 'primaryDetail', '0px 0px 30px 1px')
+    @include boxShadowTheme('box-shadow', 'primaryDetail', '0px 0px 30px 1px')
 
 .cardDarkTitle
     font-family: map-get($FONT, Primary)
