@@ -1,5 +1,5 @@
 import "./CardsDark.sass"
-import ButtonCards from "../buttons/ButtonCards"
+import ButtonNeon from "../buttons/ButtonNeon"
 import { Fragment, useContext } from "react"
 import { motion } from "framer-motion"
 import { ThemeContext } from '../../context/ThemeParent'
@@ -17,7 +17,7 @@ function CardsDark(props) {
                 <div className={`cardDarkBody ${globalTheme}`}>
                     <h1 className={`cardDarkTitle ${globalTheme}`}>{ obj[i].name }</h1>
                     <p className={`cardDarkParagraph ${globalTheme}`}>{ obj[i].language ?? "Readme"}</p>
-                    <ButtonCards
+                    <ButtonNeon
                         title={ props.buttonTitle }
                         link={ obj[i].link }
                     />
