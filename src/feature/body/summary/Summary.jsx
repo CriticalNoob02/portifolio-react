@@ -1,4 +1,4 @@
-import "./summary.sass"
+import "./summary.scss"
 import { useContext } from "react"
 import { ThemeContext } from '../../../context/ThemeParent'
 
