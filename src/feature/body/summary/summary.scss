@@ -16,7 +16,7 @@
     -webkit-backdrop-filter: blur( 14px );
     @include boxShadowTheme('border','strongGlow','1px solid');
     user-select: none;
-    animation: $Shadow_Blur  4s linear infinite;
+
 }
 
 .titleBody{
