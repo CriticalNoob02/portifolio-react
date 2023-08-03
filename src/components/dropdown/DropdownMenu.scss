@@ -1,0 +1,16 @@
+@import '../style/themes/themes';
+
+.menuDropdown{
+    position: absolute;
+    right: 2rem;
+    top: 14vh;
+    height: 200px;
+    width: 25%;
+    @include themify('background', 'dimGlow');
+    @include boxShadowTheme('border', 'primary', 'solid 1px');
+    @include boxShadowTheme('box-shadow', 'primary', '5px 15px 20px');
+    border-radius: 10px;
+    overflow: hidden;
+    transition: 3s;
+    z-index: 1;
+}

@@ -1,6 +1,7 @@
 import './header.sass'
 import { useContext } from "react"
 import ButtonTheme from '../../components/buttons/ButtonTheme'
+import DropdownMenu from '../../components/dropdown/DropdownMenu'
 import { DARK_THEME, LIGHT_THEME, ThemeContext } from '../../context/ThemeParent'
 
 function Header(props) {
@@ -18,6 +19,7 @@ function Header(props) {
             </div>
             <ButtonTheme changeTheme={LIGHT_THEME}>Light</ButtonTheme>
             <ButtonTheme changeTheme={DARK_THEME}>Dark</ButtonTheme>
+            <DropdownMenu/>
         </div>
     )
 }
